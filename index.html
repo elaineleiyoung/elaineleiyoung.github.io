@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Elaine Leiyoung</title>
+        <!--title icon-->
+        <link rel="shortcut icon" href="/Users/elaineleiyoung/Desktop/Personal Website/images/E.png">
+        <!--css file link-->
+        <link rel="stylesheet" type="text/css" href="/Users/elaineleiyoung/Desktop/Personal Website/css/style.css">
+        <!--using-FontAwesome-->
+        <script src="https://kit.fontawesome.com/c8e4d183c2.js"
+        crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+    <!--main-->
+    <section id="main">
+        <!--navigation-->
+        <nav>
+        <!--logo-->
+        <a href="#" class="logo">LOGO</a>
+        <!--menu-->
+        <ul class="menu">
+        <li><a href="#main" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!--language---->
+        <a href="#" class="lang">En</a>
+        </nav>
+        <!--name-->
+        <div class = "name">
+        <!--name-->       
+        <h1>ELAINE LEIYOUNG</h1>
+        <!--details-->
+        <p class="details">Computer Science student at Boston University. </p>
+        <!--resume-btn-->
+        <a href="https://docs.google.com/document/d/1lcmHCpfk4JzpzyJjh38AJzfxedLOOVHW/edit?usp=sharing&ouid=100182720498799617982&rtpof=true&sd=true" class="resume-btn">Download Resume</a>
+
+        </div>
+        <!--social-->
+        <div class="social">
+        <a href="https://www.instagram.com/elaineleiyoung/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/eleiyoung/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/elaineleiyoung"><i class="fab fa-github"></i></a>
+        </div>
+        <!--arrow-->
+        <div class="arrow">
+
+        </div>
+
+        </section>
+        <!--about-section-->
+        <section id="about">
+        <!--text-->
+        <div class="about-text">
+        <h1>ABOUT ME</h1>
+        <p1>I am a student with sophomore standing at Boston University 
+            pursuing a major in computer science and minor in economics.
+            I'm interested in data science, software development, and AI. 
+        </p1>
+        <br></br>
+        <p2><span id="dots"></span><span id="more">Some organizations I am involved with at school include 
+            Upsilon Pi Epsilon (BU's computer science honor society), 
+            the Society of Asian Scientists and Engineers (SASE), 
+            BU Developer Student Club, and Women In Stem and Engineering (WISE).
+            <br></br>
+            Before coming to college, I worked part-time as a teaching assistant at MT Learning Center, 
+            a tutoring center in California and was the captain of my school's golf team. 
+            In my free time, I enjoy playing a round of golf or exploring the city. 
+            My favorite subjects include math and computer science, but I also enjoy reading and writing. 
+            </span>
+        </p2>
+        <br></br>
+        <!--button-->
+        <button onclick="myFunction()" id="myBtn">More Details</button>
+        </div>
+        <!--about-model-img-->
+        <img class="resize" src="/Users/elaineleiyoung/Desktop/Personal Website/images/20201118_093454_843.JPG" alt="image of Elaine Leiyoung"/>
+        </section>
+        <!--projects-section-->
+        <section id="projects">
+        <!--projects-heading-->
+        <div class="p-heading">
+        <h1>Projects</h1>
+        <p>Below are some of the projects I have done: </p>
+        </div>
+        </section>
+        <!--projects-box-container-->
+        <div class="p-b-container">
+        <!--box-1-->
+        <div class="p-box">
+        <!--projects-box-img-->
+        <div class="p-box-img">
+        <!--type-->
+        <div class="p-type"><a href="https://devpost.com/software/tete-a-tete-386usi">Tête-à-Tête</a></div>
+        <!--img-->
+        <img src="/Users/elaineleiyoung/Desktop/Personal Website/images/tete-a-tete.jpg">
+        </div>
+        <!--projects-box-text-->
+        <div class="p-box-text">
+            <a>A mobile app created for BostonHacks 2021 using 
+                Android Studio. The app provides conversation starters based
+                on levels of intimacy and topic.</a>
+        </div>
+
+        </div>
+
+        <!--box-2-->
+        <div class="p-box">
+            <!--projects-box-img-->
+            <div class="p-box-img">
+            <!--type-->
+            <div class="p-type"><a href="#">Personal Website</a></div>
+            <!--img-->
+            <img src="/Users/elaineleiyoung/Desktop/Personal Website/images/E-invert.png">
+            </div>
+            <!--projects-box-text-->
+            <div class="p-box-text">
+                <a>This personal website which uses HTML, CSS, and JavaScript.</a>
+            </div>
+    
+            </div>
+
+        </div>
+        </section>
+        <!--message-->
+        <section id="contact">
+        <h1>If you would like to get in touch:</h1>
+       <!-- <textarea name="message" row="5" cols="20" placeholder="Write Message..."></textarea> -->
+        <!--submit-->
+        <!-- <button>Submit</button> -->
+        </div>
+        </section>
+        <!--socials-->
+        <div class="c-social">
+            <a href="https://www.instagram.com/elaineleiyoung/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/eleiyoung/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/elaineleiyoung"><i class="fab fa-github"></i></a>
+
+        </form>
+        </section>
+        
+            <!--Jquery-->
+        <script type="text/javascript" src="js/Jquery.js"></script>
+        <!--For Change Bar Icon to "x"-->
+        <script type="text/javascript">
+            function myFunction() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "More Details";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Less Details";
+                    moreText.style.display = "inline";
+                }
+            }
+        </script>
+    </body>
+</html>
