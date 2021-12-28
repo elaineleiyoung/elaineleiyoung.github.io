@@ -19,7 +19,7 @@ a{
     height: 100vh;
     box-sizing: border-box;
     background-color: #000000;
-    position: relative;
+    position: center;
     background-image: url("https://img.wallpapersafari.com/desktop/1440/900/73/7/IFGysl.jpg");
     background-repeat: no-repeat;
     background-size:cover;
@@ -54,12 +54,6 @@ nav{
 .lang{
     color: #747171;
 }
-.logo{
-    font-size: 25px;
-    font-weight: bold;
-    color: #000000;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /*may change*/
-}
 .menu li a:hover,
 .active{
     color:#000000;
@@ -84,7 +78,7 @@ nav{
 
 .name h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: 500;
     letter-spacing: 3px;
     margin: 0px;
