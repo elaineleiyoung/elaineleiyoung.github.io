@@ -65,7 +65,7 @@ nav{
     letter-spacing: 2px;
     width: 800px;
     position: absolute;
-    right: 20%;
+    left: 20%;
     top: 50%;
     transform: translate(-30%, -50%);
     color:#C0C0C0;
