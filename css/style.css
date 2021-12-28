@@ -67,7 +67,7 @@ nav{
     position: absolute;
     left: 20%;
     top: 50%;
-    transform: translate(-30%, -50%);
+    transform: translate(-20%, -50%);
     color:#C0C0C0;
 }
 .name p:n-thchild(1),
