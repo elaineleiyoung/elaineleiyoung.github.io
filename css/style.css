@@ -19,11 +19,11 @@ a{
     height: 100vh;
     box-sizing: border-box;
     background-color: #000000;
-    position: relative;
-    background-image: url("/images/EL-invert.png");
+    position: center;
+    /* background-image: url("/Users/elaineleiyoung/Documents/GitHub/elaineleiyoung.github.io/images/EL-invert.png");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: right center;
+    background-position: right center; */
 }
 nav{
     display: flex;
@@ -54,12 +54,6 @@ nav{
 .lang{
     color: #747171;
 }
-.logo{
-    font-size: 25px;
-    font-weight: bold;
-    color: #000000;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /*may change*/
-}
 .menu li a:hover,
 .active{
     color:#000000;
@@ -69,9 +63,9 @@ nav{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 200;
     letter-spacing: 2px;
-    width: 500px;
+    width: 800px;
     position: absolute;
-    left: 20%;
+    right: 20%;
     top: 50%;
     transform: translate(-30%, -50%);
     color:#C0C0C0;
@@ -84,7 +78,7 @@ nav{
 
 .name h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: 500;
     letter-spacing: 3px;
     margin: 0px;
@@ -382,7 +376,7 @@ nav{
     -webkit-text-fill-color:transparent;
     transition: all ease 0.5s;
 }
-@media(max-width:1190px){
+@media(max-width:1200px){
     #main{
         background-image: none;
     }
@@ -390,6 +384,10 @@ nav{
         left:10%;
         top: 50%;
         transform: translate(-10%, -50%);
+        width: 600px;
+    }
+    .name h1{
+        font-size: 60px;
     }
     #projects{
         height: auto;
@@ -410,6 +408,10 @@ nav{
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
+        width: 500px;
+    }
+    .name h1{
+        font-size: 50px;
     }
     .about-model{
         display:none;
