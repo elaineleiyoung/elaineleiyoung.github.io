@@ -305,8 +305,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 50px;
     background-color: black;
 }
 #contact h1{
@@ -357,35 +356,20 @@ nav{
     align-items: center;
     height: 200px;
     padding-bottom: 200px;
-    background:-moz-linear-gradient(top, black 0%, grey 100%); 
-    background: -webkit-linear-gradient(top, black 0%,black 100%); 
-    background: linear-gradient(to bottom, #000000 0%,#747171 100%);
-    -webkit-background-clip: content-box;
-    -moz-background-clip:none;
-    background-clip:initial;
-    -webkit-text-fill-color:black;
+    background-color:#000000;
 }
 .c-social a{
     margin: 10px 20px;
 }
 .c-social i{
-    color:#C0C0C0;
+    color:#928f8f;
     font-size: 100px;
 }
 .c-social a:hover i{
-    background:-moz-linear-gradient(top, #ffffff 0%, aliceblue 100%); 
-    background: -webkit-linear-gradient(top, #C0C0C0 0%,aliceblue 100%); 
-    background: linear-gradient(to bottom, aliceblue 0%,#928f8f 100%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
+    color: aliceblue;
     transition: all ease 0.5s;
 }
-@media(max-width:1200px){
-    #main{
-        background-image: none;
-    }
+@media(max-width:1400px){
     .name{
         left:10%;
         top: 50%;
@@ -407,9 +391,6 @@ nav{
     }
 }
 @media(max-width:970px){
-    #main{
-        background-image: none !important;
-    }
     .name{
         left: 50%;
         top: 50%;
