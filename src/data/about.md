@@ -25,7 +25,7 @@ Feel free to reach out if you have any questions or want to learn more about my 
 - Knitting
 - Gaming
 - Podcasts ([The Daily](https://www.nytimes.com/column/the-daily), [Morning Brew](https://www.morningbrew.com/daily/stories/morning-brew-podcasts), [Being in the Way](https://play.alanwatts.org/being-in-the-way-podcast), [The Dragon Friends](https://thedragonfriends.com/)
-- [Photography](https://instagram.com/treelane.pics)
+- [Photography](https://elaineleiyoung.github.io/photography/)
 
 
 # Travel / Geography
