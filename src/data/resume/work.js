@@ -13,156 +13,62 @@
  */
 const work = [
   {
-    name: 'Smile Identity',
-    position: 'VP Engineering & Head of AI',
-    url: 'https://smileidentity.com',
-    startDate: '2022-01-01',
-    summary: `Smile builds machine learning APIs to compare user submitted photos to ID documents. Our APIs are
-    used by hundreds of thousands of people every day to access financial services. As VP of Engineering,
-    I provide technical leadership on high-impact projects, influence and coach a distributed team of engineers,
-    and facilitate alignment and clarity across teams on goals, outcomes, and timelines. I was promoted
-    from Director of Engineering to VP of Engineering in April 2022, and then to VP of Engineering and Head
-    of AI in November 2022. I lead a 20+ person engineering org. I directly manage ~8 engineers and spend
-    >50% of my time writing code.`,
+    name: 'Goldman Sachs',
+    position: 'Engineering Summer Analyst Intern',
+    url: 'https://www.goldmansachs.com/',
+    startDate: '2024-06-17',
+    endDate: '2024-08-16',
     highlights: [
-      'Redesigned engineering processes for bug tracking, meetings, and standups. Improved culture for code reviews, blameless post-mortems, and retrospectives.',
-      'Re-architected engineering hiring and onboarding processes. Recruited several strong engineers.',
-      'Reorged engineering teams to focus on product delivery. Created a new team to focus on ML infrastructure.',
-      'Lead re-design of internal APIs for inference. Built new computer vision pipelines for industry leading certifications (NIST/iBeta liveness).',
-      'Pitched, designed, developed, deployed, and maintain a fraud detection product based on 1-N facial recognition using embeddings and vector search.',
+      'Redesigned and uplifted divisional task tracking portal using React, Django (Python), Celery Distributed Task Queue, and MongoDB, adding search by ID functionality through 30,000 user triggered tasks to improve internal workflow.',
+      'Created REST API endpoint and new interface to display millions of automated feed tasks (previously not accessible), expanding the firm’s task troubleshooting capabilities for 100+ internal users.',
+      'Developed and implemented a new end-to-end untracked tasks feature that increased access to task information by 200% and followed design procedures by thoroughly understanding requirements, drafting and aligning design proposals, undergoing multiple design reviews, and successfully navigating the MR review and approval process.',
     ],
   },
   {
-    name: 'Skeptical Investments',
-    position: 'Co-founder',
-    url: 'http://skepticalinvestments.biz',
-    startDate: '2017-04-01',
-    summary: `Skeptical Investments is a micro-vc fund focused on Angel, Seed, and Series-A
-    YC companies.`,
+    name: 'Mobalytics',
+    position: 'Gaming Market Research and Analytics Extern',
+    url: 'https://mobalytics.gg/',
+    startDate: '2024-04-01',
+    endDate: '2024-06-01',
     highlights: [
-      'Created the InstaSafe. Fast, automated investment docs for YC companies.',
-      'Advise several startups in the fund.',
+      'Conducted in-depth analysis of various gaming genres, focusing on game mechanisms, key performance indicators (KPIs), revenue models, and player psychology to support strategic planning.',
+      'Evaluated specific games within chosen genres to gain firsthand experience and qualitative insights, contributing to a comprehensive analysis.',
+      'Summarized research findings and creatde compelling presentations, providing key takeaways and strategic recommendations for market expansion to align with Mobalytics vision and mission.',
     ],
   },
   {
-    name: 'Arthena',
-    position: 'Co-founder & C.T.O.',
-    url: 'https://arthena.com',
-    startDate: '2014-01-01',
-    endDate: '2022-01-01',
-    summary: `Arthena is a Series A Company funded by <a href="https://www.anthemis.com/">Athemis</a>,
-    <a href="https://foundationcapital.com">Foundation Capital</a>, and <a href="https://ycombinator.com/">YC</a>.
-    We develop quantitative strategies to predict the value of fine art and build investment products.
-    I ran a 20-person product and engineering org for 8 years. We were acquired by
-    <a href="https://www.masterworks.com/">Masterworks</a> in 2023.`,
+    name: 'Boston University - Department of Computer Science',
+    position: 'Undergraduate Researcher',
+    url: 'http://bu.edu/cs',
+    startDate: '2023-09-01',
+    endDate: '2024-02-01',
     highlights: [
-      'Built production, online, end-to-end optimized machine learning pipelines for time-series prediction.',
-      'Designed micro-service architecture around: data collection, data integrity, feature engineering, research, strategy, backtesting, deployment, and reporting.',
-      "Set and communicated team priorities that supported the broader organization's goals. Aligned strategy, processes, and decision-making across teams.",
-      "Set clear expectations with individuals based on their level and role and aligned them to the broader organization's goals. Met regularly with individuals to discuss performance and development, and provided feedback and coaching.",
-      'Developed the long-term technical vision and roadmap within, and often beyond, the scope of my teams. Evolved the roadmap to meet anticipated future requirements and infrastructure needs.',
+      'Formalized mathematical proofs and matrix operations using proof assistant Lean, creating easy-to-use and user-friendly library for educational settings.',
+      'Developed Matrix constructor representations making it impossible to index out of bounds and implemented interface for warning messages, reducing user overhead.',
+      'Established pretty-printing functionality, allowing students to view matrices and improve conceptualization.',
     ],
   },
   {
-    name: 'Enveritas',
-    position: 'ML Engineering Contractor',
-    url: 'http://enveritas.org',
-    startDate: '2016-09-01',
-    endDate: '2018-01-01',
-    summary: `Enveritas is a non-profit that works with coffee farmers to improve their livelihoods.
-    I joined on day one and helped build a variety of tools to collect and analyze data. I also advised
-    on technical strategy, helped hire engineers, and advised on their YC application.`,
+    name: 'Nutanix',
+    position: 'Hybrid Cloud Data Engineer Intern',
+    url: 'http://nutanix.com',
+    startDate: '2023-06-01',
+    endDate: '2023-08-01',
     highlights: [
-      'Trained a model for the Brazilian Coffee Scenes Dataset with better than state of the art accuracy.',
-      'Collected training sets on the ground in Uganda. Built dashboards to visualize work of surveyors using Flask, React, and D3.',
-      "Performed supporting analysis to ensure data integrity using Pandas, t-SNE, SVM's, and other techniques.",
+      'Collaborated with the File System team to design and develop new features encompassing AWS S3 object stores, leveraging React, Flask, Snowflake, and Linux to allow users access to audit events and activity on S3 objects.',
+      'Retrieved file activity and handled 100+ file audit events by implementing REST APIs, fetching data from Snowflake using SQL, and writing data library classes and tests using Python and Unittest.',
+      'Leveraged Gerrit and Git for version control, allowing seamless integration of code changes while working on expanding and adding features to the product.',
     ],
   },
   {
-    name: 'Zenysis',
-    position: 'Software Engineering Contractor',
-    url: 'https://zenysis.com',
-    startDate: '2016-02-01',
-    endDate: '2016-03-01',
-    summary: `Zenysis develops data analysis and visualization tools for government agencies and international organizations.
-    Their solutions help improve decision-making by integrating and analyzing large-scale datasets from various sources.
-    I was the second contributor to the codebase. We built data visualization tools and tackled complex data ingestion
-    challenges for the Ethiopian Ministry of Health.`,
+    name: 'Major League Hacking',
+    position: 'Production Engineering Fellow',
+    url: 'https://fellowship.mlh.io/',
+    startDate: '2022-06-01',
+    endDate: '2022-08-01',
     highlights: [
-      'Worked in Addis Ababa for the Ethiopian Ministry of Health and built data visualization tools in React and Flask.',
-      'Ingested multiple databases with different alphabets, calendars, and without official spellings of geographic locations.',
-    ],
-  },
-  {
-    name: 'Matroid',
-    position: 'Co-founder',
-    url: 'https://matroid.com',
-    startDate: '2015-07-01',
-    endDate: '2016-01-01',
-    summary: `Matroid is a computer vision platform for creating and deploying detectors. Detectors help customers identify objects,
-    events, or patterns in images and videos without requiring machine learning or coding expertise. I played a crucial role in
-    defining the company's vision. I was responsible for architecting and building the initial product. I left shortly after the
-    Series A to focus on Arthena.`,
-    highlights: [
-      'Developed end to end machine learning pipeline to train visual classifiers from keywords using Caffe, Node.JS, Redis, MongoDB, and other technologies.',
-    ],
-  },
-  {
-    name: 'Planet',
-    position: 'Missions Intern',
-    url: 'https://planet.com',
-    startDate: '2014-06-01',
-    endDate: '2015-01-01',
-    highlights: [
-      'Built models to improve image quality, signal to noise ratio, and dynamic range.',
-      'Performed statistical analysis of image quality in Matlab and Python.  Developed flight software in C++.',
-      'Organized first hackathon, prototyped hardware, and designed and built photography equipment for rocket launches.',
-    ],
-  },
-  {
-    name: 'Planetary Resources',
-    position: 'Avionics Intern',
-    startDate: '2014-01-01',
-    endDate: '2014-05-01',
-    url: 'http://planetaryresources.com',
-    highlights: [
-      'Developed simulations in Matlab for Attitude Determination and Control Subsystem.',
-      'Developed processes for in lab testing and characterization of various subsystems.',
-      'Assembled flight hardware in cleanroom.',
-    ],
-  },
-  {
-    name: 'Facebook',
-    position: 'Software Engineer Intern',
-    url: 'https://facebook.com',
-    startDate: '2013-06-01',
-    endDate: '2013-09-01',
-    highlights: [
-      'Developed software in python for automated testing of servers.',
-      'Performed statistical analysis with R, HIVE to assist in triage of malfunctioning servers.',
-      "Worked with vendors and ODM's during triage to assist in risk mitigation.",
-    ],
-  },
-  {
-    name: 'SEDS-USA',
-    position: 'At Large Board Member',
-    url: 'http://seds.org',
-    startDate: '2013-10-01',
-    endDate: '2014-10-01',
-    highlights: [
-      "Elected to Board of Directors of the USA's largest student space advocacy group based on 5+ years of work with SEDS.",
-      'Responsibilities included: organizational strategy, conference presentations, fundraising, special projects, promoting SEDS nationally and internationally, and photographing conferences.',
-    ],
-  },
-  {
-    name: 'UB Nanosatellite Program',
-    position: 'Co-founder, Program Manager',
-    url: 'https://ubnl.space/',
-    startDate: '2010-10-01',
-    endDate: '2012-06-01',
-    highlights: [
-      'Coauthored grant to build a multi-spectral imaging satellite as part of the AFRL University Nanosatellite Program.',
-      'Lead a team of 60 students through satellite development life cycle. Served as a technical expert, acquired intimate working knowledge of satellite subsystems.  Solicited funding through NASA, AFOSR, and several corporate sponsors.',
+      'Developed web app with Python, Flask, Jinja, and MySQL; automated testing and deployment with GitHub Actions; and set up container monitoring, alerting, and visualization using Prometheus and Grafana.',
+      'Completed 12-weeks of Meta Production Engineering Track training requiring tmux, Bash scripting, regex, test-driven development, unit testing, system services, Docker, Nginx, and CI/CD.',
     ],
   },
 ];

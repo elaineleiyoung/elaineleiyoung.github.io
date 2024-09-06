@@ -1,7 +1,7 @@
 const routes = [
   {
     index: true,
-    label: "Michael D'Angelo",
+    label: 'Elaine Leiyoung',
     path: '/',
   },
   {
@@ -16,9 +16,13 @@ const routes = [
     label: 'Projects',
     path: '/projects',
   },
+  // {
+  //   label: 'Stats',
+  //   path: '/stats',
+  // },
   {
-    label: 'Stats',
-    path: '/stats',
+    label: 'Photography',
+    path: '/photography',
   },
   {
     label: 'Contact',
