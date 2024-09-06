@@ -22,7 +22,7 @@ const routes = [
   // },
   {
     label: 'Photography',
-    path: '/photography/',
+    path: 'https://elaineleiyoung.github.io/photography/',
   },
   {
     label: 'Contact',
