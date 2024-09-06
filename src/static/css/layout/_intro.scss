@@ -15,7 +15,9 @@
     position: relative;
 
     img {
-      width: 10em;
+      width: 18em;
+      height: 18em;
+      object-fit: cover;
       border-radius: 50%;
       display: block;
     }

@@ -12,9 +12,9 @@ const SideBar = () => (
         <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
       </Link>
       <header>
-        <h2>Michael D&apos;Angelo</h2>
+        <h2>Elaine Leiyoung</h2>
         <p>
-          <a href="mailto:michael@mldangelo.com">michael@mldangelo.com</a>
+          <a href="mailto:elaine_leiyoung@berkeley.edu">elaine_leiyoung@berkeley.edu</a>
         </p>
       </header>
     </section>
@@ -22,14 +22,10 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Michael. I am a{' '}
-        <a href="https://icme.stanford.edu/">Stanford ICME</a> graduate, YC
-        Alumni, and the VP of Engineering at{' '}
-        <a href="https://smileidentity.com">Smile Identity</a>. Previously, I
-        was the co-founder and CTO of <a href="https://arthena.com">Arthena</a>,
-        co-founder of <a href="https://matroid.com">Matroid</a>, and worked at{' '}
-        <a href="https://planet.com">Planet</a> and{' '}
-        <a href="https://facebook.com">Facebook</a>.
+        Hi, I&apos;m Elaine. I am a{' '}
+        Masters student at<a href="https://grad.berkeley.edu/">UC Berkeley</a>, pursuing my degree in
+        <a href="https://ieor.berkeley.edu/"> Industrial Engineering and Operations Research</a>, with a concentration in
+        <a href="https://ieor.berkeley.edu/academics/master-of-engineering/concentrations/"> Fintech</a>.
       </p>
       <ul className="actions">
         <li>
@@ -49,7 +45,7 @@ const SideBar = () => (
     <section id="footer">
       <ContactIcons />
       <p className="copyright">
-        &copy; Michael D&apos;Angelo <Link to="/">mldangelo.com</Link>.
+        &copy; Elaine Leiyoung <Link to="/">elaineleiyoung.github.io</Link>.
       </p>
     </section>
   </section>
