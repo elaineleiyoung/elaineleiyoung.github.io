@@ -11,7 +11,7 @@ const Navigation = () => (
       {routes
         .filter((l) => l.index)
         .map((l) => (
-          <Link key={l.label} to={l.path} target={'_blank' ? l.path.charAt(0) !== '/' : undefined} reloadDocument>
+          <Link key={l.label} to={l.path} reloadDocument>
             {l.label}
           </Link>
         ))}
@@ -22,7 +22,7 @@ const Navigation = () => (
           .filter((l) => !l.index)
           .map((l) => (
             <li key={l.label}>
-              <Link to={l.path} target={'_blank' ? l.path.charAt(0) !== '/' : undefined} reloadDocument>{l.label}</Link>
+              <Link to={l.path} reloadDocument>{l.label}</Link>
             </li>
           ))}
       </ul>
