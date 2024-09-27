@@ -23,7 +23,7 @@ const SideBar = () => (
       <h2>About</h2>
       <p>
         Hi, I&apos;m Elaine. I am a{' '}
-        Masters student at<a href="https://grad.berkeley.edu/">UC Berkeley</a>, pursuing my degree in
+        Masters student at<a href="https://grad.berkeley.edu/"> UC Berkeley</a>, pursuing my degree in
         <a href="https://ieor.berkeley.edu/"> Industrial Engineering and Operations Research</a>, with a concentration in
         <a href="https://ieor.berkeley.edu/academics/master-of-engineering/concentrations/"> Fintech</a>.
       </p>
