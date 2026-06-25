@@ -1,12 +1,34 @@
-// About page (/about)
+/* Markdown content (About page) */
 
 .markdown {
   p {
-    margin: auto;
+    line-height: 1.85;
+    color: _palette(fg);
   }
 
+  // Section headings in markdown (## heading)
   h1 {
-    font-size: 0.8em;
-    margin-top: 3em;
+    font-family: _font(family-heading);
+    font-size: 1.15em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: _palette(fg-bold);
+    margin: 2.5em 0 0.75em 0;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid _palette(border);
+  }
+
+  ul {
+    padding-left: 1.2em;
+
+    li {
+      padding-left: 0.4em;
+      margin-bottom: 0.3em;
+      line-height: 1.7;
+    }
+  }
+
+  a {
+    color: _palette(fg-bold);
   }
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ContactIcons from '../Contact/ContactIcons';
 
-const { PUBLIC_URL } = process.env; // set automatically from package.json:homepage
+const { PUBLIC_URL } = process.env;
 
 const SideBar = () => (
   <section id="sidebar">
@@ -22,21 +22,16 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Elaine. I am a{' '}
-        Masters student at<a href="https://grad.berkeley.edu/"> UC Berkeley</a>, pursuing my degree in
-        <a href="https://ieor.berkeley.edu/"> Industrial Engineering and Operations Research</a>, with a concentration in
-        <a href="https://ieor.berkeley.edu/academics/master-of-engineering/concentrations/"> Fintech</a>.
+        Engineer and researcher based in San Francisco.
+        MEng at <a href="https://ieor.berkeley.edu/">UC Berkeley IEOR</a>,
+        previously CS &amp; Economics at Boston University.
       </p>
       <ul className="actions">
         <li>
-          {!window.location.pathname.includes('/resume') ? (
-            <Link to="/resume" className="button">
-              Learn More
-            </Link>
+          {!window.location.pathname.includes('/record') ? (
+            <Link to="/record" className="button">The Record</Link>
           ) : (
-            <Link to="/about" className="button">
-              About Me
-            </Link>
+            <Link to="/about" className="button">The Wanderer</Link>
           )}
         </li>
       </ul>
@@ -45,7 +40,7 @@ const SideBar = () => (
     <section id="footer">
       <ContactIcons />
       <p className="copyright">
-        &copy; Elaine Leiyoung <Link to="/">elaineleiyoung.github.io</Link>.
+        &copy; Elaine Leiyoung &mdash; <Link to="/">elaineleiyoung.github.io</Link>
       </p>
     </section>
   </section>

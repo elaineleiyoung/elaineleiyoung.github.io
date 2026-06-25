@@ -5,27 +5,23 @@ const routes = [
     path: '/',
   },
   {
-    label: 'About',
+    label: 'The Wanderer',
     path: '/about',
   },
   {
-    label: 'Resume',
-    path: '/resume',
+    label: 'The Record',
+    path: '/record',
   },
   {
-    label: 'Projects',
-    path: '/projects',
-  },
-  // {
-  //   label: 'Stats',
-  //   path: '/stats',
-  // },
-  {
-    label: 'Photography',
-    path: 'https://elaineleiyoung.github.io/photography/',
+    label: 'The Craft',
+    path: '/craft',
   },
   {
-    label: 'Contact',
+    label: 'Observe',
+    path: '/observe',
+  },
+  {
+    label: 'Send Word',
     path: '/contact',
   },
 ];

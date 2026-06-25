@@ -1,0 +1,31 @@
+// Light mode — xuan paper
+:root {
+  --color-bg: #F5F0E8;
+  --color-bg-alt: #EDE8DE;
+  --color-fg: #4A4540;
+  --color-fg-bold: #1C1814;
+  --color-fg-light: #9A9590;
+  --color-border: rgba(74, 69, 64, 0.2);
+  --color-border-bg: rgba(74, 69, 64, 0.05);
+  --color-border-alt: rgba(74, 69, 64, 0.4);
+  --color-accent: #5C7A6A;
+  --color-petal: #BF5A78;
+  --color-seal: #C0272D;
+  --color-header-bg: rgba(245, 240, 232, 0.92);
+}
+
+// Dark mode — deep ink
+[data-theme='dark'] {
+  --color-bg: #0F0D0B;
+  --color-bg-alt: #171410;
+  --color-fg: #C8C0B0;
+  --color-fg-bold: #E8E0D0;
+  --color-fg-light: #6A6460;
+  --color-border: rgba(200, 192, 176, 0.15);
+  --color-border-bg: rgba(200, 192, 176, 0.05);
+  --color-border-alt: rgba(200, 192, 176, 0.3);
+  --color-accent: #7AA888;
+  --color-petal: #A05070;
+  --color-seal: #D4353D;
+  --color-header-bg: rgba(15, 13, 11, 0.92);
+}

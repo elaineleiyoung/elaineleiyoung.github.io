@@ -1,33 +1,48 @@
-// Contact page (/contact)
+/* Send Word — contact page */
 
 #contact {
   .email-at {
-    margin: 3em 0;
+    margin: 2.5em 0 2em;
 
     p {
-      margin: 0;
+      margin: 0 0 0.4em 0;
+      font-size: 0.82em;
+      color: _palette(fg-light);
+      font-style: italic;
     }
 
-    .inline-container {
-      width: 100%;
-
-      span:focus {
-        display: inline-block;
-        outline: none;
-        border: 0;
-        text-align: right;
-      }
+    a {
+      font-family: _font(family-heading);
+      font-size: 1.3em;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: _palette(fg-bold);
     }
   }
 }
 
-.inline {
-  min-width: 150px;
-  display: inline-block;
-  margin: 0;
+// Social icons row
+#contact .icons {
+  margin-top: 2.5em;
+  display: flex;
+  gap: 1.5em;
   padding: 0;
-  font-size: 15;
-  outline: 0;
-  border: 0;
-  text-align: right;
+  list-style: none;
+
+  li {
+    padding: 0;
+    display: inline-flex;
+  }
+
+  a {
+    color: _palette(fg-light);
+    font-size: 1.1em;
+    @include vendor("transition", "color 0.2s ease");
+    border: none;
+    background-image: none;
+
+    &:hover {
+      color: _palette(accent) !important;
+    }
+  }
 }

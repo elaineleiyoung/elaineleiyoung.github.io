@@ -1,4 +1,4 @@
-/* Resume */
+/* The Record — resume page */
 
 #resume {
   .link-to {
@@ -6,133 +6,209 @@
     top: -4.5em;
   }
 
-  .link-container h4 {
-    text-decoration: none;
-    border-bottom: none;
-    display: inline-flex;
+  .link-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1.5em;
+    margin-top: 0.5em;
 
-    a {
-      padding: 0 0.5em;
+    h4 {
+      font-family: _font(family);
+      font-size: 0.72em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-bottom: none;
+      display: inline-flex;
       margin: 0;
+
+      a {
+        color: _palette(fg-light);
+        padding: 0;
+        margin: 0;
+
+        &:hover {
+          color: _palette(accent) !important;
+        }
+      }
     }
   }
 
   .education {
+    margin-top: 3em;
+
     .title {
-      text-align: center;
-      margin-bottom: 2em;
-    }
-  }
-  .experience {
-    .title {
-      text-align: center;
-    }
-    .job {
-      margin: 1em;
-      p {
+      text-align: left;
+      margin-bottom: 1.5em;
+
+      h3 {
+        font-family: _font(family-heading);
+        font-size: 1.3em;
+        font-weight: 400;
+        color: _palette(fg-bold);
         margin: 0;
       }
+    }
+  }
+
+  .experience {
+    margin-top: 3em;
+
+    .title {
+      text-align: left;
+
+      h3 {
+        font-family: _font(family-heading);
+        font-size: 1.3em;
+        font-weight: 400;
+        color: _palette(fg-bold);
+        margin-bottom: 1.5em;
+      }
+    }
+
+    .job {
+      margin: 0 0 2.5em 0;
+      padding: 0 0 2.5em 0;
+      border-bottom: 1px solid _palette(border);
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      p { margin: 0; }
     }
   }
 
   .jobs-container {
     .points {
       li {
-        margin: 0;
+        margin: 0.3em 0;
         padding: 0;
-        font-size: 0.9em;
+        font-size: 0.88em;
+        line-height: 1.7;
       }
     }
   }
 
   .courses {
-    padding-top: 1.6em;
-    .title {
-      text-align: center;
-    }
-    .course-list {
-      text-align: center;
+    margin-top: 3em;
 
-      h4 {
-        white-space: nowrap;
+    .title {
+      text-align: left;
+      margin-bottom: 1.5em;
+
+      h3 {
+        font-family: _font(family-heading);
+        font-size: 1.3em;
+        font-weight: 400;
+        color: _palette(fg-bold);
+        margin: 0;
       }
+    }
+
+    .course-list {
+      text-align: left;
     }
   }
 
   .skills {
-    margin-top: 2em;
+    margin-top: 3em;
+
     .title {
-      text-align: center;
+      text-align: left;
+      margin-bottom: 1.5em;
+
+      h3 {
+        font-family: _font(family-heading);
+        font-size: 1.3em;
+        font-weight: 400;
+        color: _palette(fg-bold);
+        margin: 0;
+      }
+
       p {
-        font-size: 0.9em;
+        font-size: 0.85em;
+        margin: 0.3em 0 0;
+        font-style: italic;
+        color: _palette(fg-light);
       }
     }
   }
 
   .summary {
-    margin-bottom: 0.5em;
-    font-size: 0.9em;
+    margin-bottom: 0.4em;
+    font-size: 0.88em;
+    font-style: italic;
+    color: _palette(fg-light);
   }
 
   .references {
-    margin: 2em 0;
+    margin: 3em 0;
+
     .title {
-      text-align: center;
+      text-align: left;
+      margin-bottom: 1.5em;
+
+      h3 {
+        font-family: _font(family-heading);
+        font-size: 1.3em;
+        font-weight: 400;
+        color: _palette(fg-bold);
+        margin: 0;
+      }
     }
   }
 }
 
 .daterange {
   margin-bottom: 0.2em;
+  font-size: 0.78em;
+  color: _palette(fg-light);
+  letter-spacing: 0.04em;
 }
 
 .degree-container {
+  margin-bottom: 2em;
+
   h4 {
-    font-weight: normal;
+    font-weight: 400;
+    font-size: 0.85em;
+    color: _palette(fg-bold);
   }
 
   .degree {
     margin-bottom: 0.1em;
     text-transform: none;
-    letter-spacing: 0.16em;
-    font-size: 0.8em;
+    letter-spacing: 0.04em;
+    font-size: 0.85em;
+    color: _palette(fg-bold);
   }
 
   .school {
     text-transform: none;
-    padding-top: 0.3em;
-    margin-bottom: 1em;
+    padding-top: 0.1em;
+    margin-bottom: 0.3em;
+    font-size: 0.8em;
+    color: _palette(fg-light);
   }
 }
 
-.courses .course-number {
-  display: inline;
-}
+.courses .course-number { display: inline; }
 .courses .course-name {
   display: inline;
-  font-family: "Raleway", Helvetica, sans-serif;
-  font-size: 0.7em;
+  font-family: _font(family);
+  font-size: 0.82em;
   font-weight: 400;
-  letter-spacing: 0.25em;
-  line-height: 2.5;
-  margin-top: -1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 2;
+  text-transform: none;
 }
 
-.courses ul li {
-  display: inline;
-}
-
-.course-dot {
-  display: inline;
-  // display: none;
-}
+.courses ul li { display: inline; }
+.course-dot { display: inline; }
 
 @include breakpoint(small) {
-  .course-dot {
-    display: none;
-  }
-  .course-container a {
-    display: block;
-  }
+  .course-dot { display: none; }
+  .course-container a { display: block; }
 }

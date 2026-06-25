@@ -1,5 +1,6 @@
 @import-normalize;
 
+@import "libs/theme";
 @import "libs/vars";
 @import "libs/functions";
 @import "libs/mixins";
@@ -66,6 +67,8 @@
 @import "layout/footer";
 @import "layout/menu";
 
+@import "pages/journey";
+@import "pages/index";
 @import "pages/contact";
 @import "pages/notFound";
 @import "pages/resume";

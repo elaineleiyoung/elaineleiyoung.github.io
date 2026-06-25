@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Hamburger from './Hamburger';
+import ThemeToggle from './ThemeToggle';
 import routes from '../../data/routes';
 
-// Websites Navbar, displays routes defined in 'src/data/routes'
 const Navigation = () => (
   <header id="header">
     <h1 className="index-link">
@@ -27,6 +27,11 @@ const Navigation = () => (
           ))}
       </ul>
     </nav>
+    <div className="main">
+      <ul>
+        <li><ThemeToggle /></li>
+      </ul>
+    </div>
     <Hamburger />
   </header>
 );

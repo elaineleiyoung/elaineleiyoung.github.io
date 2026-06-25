@@ -1,22 +1,13 @@
-///
-/// Future Imperfect by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Basic */
 
-// MSIE: Required for IEMobile.
 @-ms-viewport {
   width: device-width;
 }
 
-// MSIE: Prevents scrollbar from overlapping content.
 body {
   -ms-overflow-style: scrollbar;
 }
 
-// Ensures page width is always >=320px.
 @include breakpoint(xsmall) {
   html,
   body {
@@ -24,11 +15,19 @@ body {
   }
 }
 
-body {
-  background: _palette(bg-alt);
+// html provides the pre-JS fallback paper background.
+// Once ThreeBackground mounts, the WebGL canvas (z-index:-1) supplies
+// the actual background colour — but we keep html's background as the
+// safe fallback so there is never a flash of unstyled content.
+html {
+  background-color: _palette(bg);
+  @include vendor("transition", "background-color 0.3s ease, color 0.3s ease");
+}
 
-  // Prevents animation/transition "flicker" on page load.
-  // Automatically added/removed by js/main.js.
+body {
+  // Transparent so the fixed Three.js canvas (z-index: -1) shows through.
+  background: transparent;
+
   &.is-loading {
     *,
     *:before,
@@ -37,4 +36,15 @@ body {
       @include vendor("transition", "none !important");
     }
   }
+}
+
+// Page fade-in on load
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#wrapper {
+  animation: pageIn 0.5s ease forwards;
+  position: relative;   // establish stacking context above the canvas
 }

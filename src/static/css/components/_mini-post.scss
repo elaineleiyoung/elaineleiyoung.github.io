@@ -1,123 +1,104 @@
-///
-/// Future Imperfect by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
+/* Project Cards */
 
-/* Mini Post */
 .cell-container {
   position: relative;
+  margin-bottom: 3em;
 
   .description {
-    position: absolute;
+    position: static;
     padding: 0;
-    bottom: 0;
-    border-top: solid 1px _palette(border);
+    border-top: none;
 
     p {
-      font-size: 0.9rem;
-      margin: 0;
-      padding: 1.25em;
-      background-color: rgba(255, 255, 255, 0.7);
-      color: #3c3b3b;
-      font-family: "Raleway", Helvetica, sans-serif;
-      z-index: 1000;
-      transition: all 0.1s;
-      -webkit-transition: all 0.1s ease-in-out;
-    }
-
-    p:hover {
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .description {
-      position: inherit;
-      padding: 0;
-      bottom: inherit;
+      font-size: 0.875em;
+      margin: 0.75em 0 0;
+      color: _palette(fg);
+      line-height: 1.7;
+      background: none;
+      font-family: _font(family);
     }
   }
 }
 
 .mini-post {
-  @include vendor("display", "flex");
-  @include vendor("flex-direction", "column");
-  background: _palette(bg);
-  border: solid 1px _palette(border);
-  margin: 0 0 _size(element-margin);
+  display: block;
+  background: none;
+  border: none;
+  margin: 0;
 
   .image {
     overflow: hidden;
     width: 100%;
+    display: block;
+    border: 1px solid _palette(border);
 
     img {
-      @include vendor(
-        "transition",
-        "transform #{_duration(transition)} ease-out"
-      );
       width: 100%;
+      display: block;
+      @include vendor("transition", "transform 0.4s ease-out, opacity 0.3s ease");
+      opacity: 0.92;
     }
 
-    &:hover {
-      img {
-        @include vendor("transform", "scale(1.05)");
-      }
+    &:hover img {
+      @include vendor("transform", "scale(1.03)");
+      opacity: 1;
     }
   }
 
   header {
-    z-index: 2;
-    @include padding(1.25em, 1.25em, (0, 3em, 0, 0));
-    min-height: 4em;
-    position: relative;
-    @include vendor("flex-grow", "1");
+    padding: 1em 0 0 0;
+    min-height: auto;
+    position: static;
+    flex-grow: unset;
 
     h3 {
-      font-size: 0.7em;
+      font-family: _font(family-heading);
+      font-size: 1.1em;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.2em 0;
+
+      a {
+        color: _palette(fg-bold);
+        background-image: linear-gradient(var(--color-accent), var(--color-accent));
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 1px;
+        @include vendor("transition", "background-size 0.3s ease, color 0.2s ease");
+        padding-bottom: 1px;
+
+        &:hover {
+          background-size: 100% 1px;
+          color: _palette(accent) !important;
+        }
+      }
     }
 
     .published {
       display: block;
-      font-family: _font(family-heading);
-      font-size: 0.6em;
-      font-weight: _font(weight-heading);
-      letter-spacing: _font(kerning-heading);
-      margin: -0.625em 0 (_size(element-margin) * 0.85) 0;
-      text-transform: uppercase;
+      font-family: _font(family);
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: _palette(fg-light);
+      text-transform: none;
+      margin: 0 0 0.5em 0;
     }
 
     .author {
-      position: absolute;
-      right: 2em;
-      top: 2em;
+      display: none;
     }
   }
 }
 
-.mini-posts {
-  margin: 0 0 _size(element-margin);
-  @include breakpoint(large) {
-    @include vendor("display", "flex");
-    @include vendor("flex-wrap", "wrap");
-    width: calc(100% + #{_size(element-margin)});
+// Two-column grid on wider screens
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em 3em;
 
-    > * {
-      margin: _size(element-margin) _size(element-margin) 0 0;
-      width: calc(50% - #{_size(element-margin)});
-    }
-
-    > :nth-child(-n + 2) {
-      margin-top: 0;
-    }
-  }
-  @include breakpoint(xsmall) {
-    display: block;
-    width: 100%;
-
-    > * {
-      margin: 0 0 _size(element-margin);
-      width: 100%;
-    }
+  @include breakpoint(medium) {
+    grid-template-columns: 1fr;
+    gap: 2.5em;
   }
 }

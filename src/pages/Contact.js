@@ -6,19 +6,19 @@ import ContactIcons from '../components/Contact/ContactIcons';
 
 const Contact = () => (
   <Main
-    title="Contact"
-    description="Contact Elaine Leiyoung via email @ elaine_leiyoung@berkeley.edu"
+    title="Send Word"
+    description="Contact Elaine Leiyoung."
   >
     <article className="post" id="contact">
       <header>
         <div className="title">
           <h2>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Send Word</Link>
           </h2>
         </div>
       </header>
       <div className="email-at">
-        <p>Feel free to get in touch. You can email me at: </p>
+        <p>Reach me at:</p>
         <a href="mailto:elaine_leiyoung@berkeley.edu">elaine_leiyoung@berkeley.edu</a>
       </div>
       <ContactIcons />

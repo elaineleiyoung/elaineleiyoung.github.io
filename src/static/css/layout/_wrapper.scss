@@ -1,38 +1,37 @@
-///
-/// Future Imperfect by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Wrapper */
 
 #wrapper {
-  @include vendor("display", "flex");
-  @include vendor("flex-direction", "row-reverse");
-  @include vendor("transition", "opacity #{_duration(menu)} ease");
+  display: block;
+  max-width: 780px;
   margin: 0 auto;
-  max-width: 100%;
+  padding: 7em 2.5em 5em;
   opacity: 1;
-  padding: (_size(section-spacing) * 1.5);
-  width: 90em;
+  position: relative;  // stacks above the Three.js canvas (z-index: -1)
+  @include vendor("transition", "opacity #{_duration(menu)} ease");
 
   body.is-menu-visible & {
     opacity: 0.15;
   }
 
   @include breakpoint(xlarge) {
-    padding: _size(section-spacing);
+    padding: 6.5em 2.5em 4em;
   }
 
   @include breakpoint(large) {
-    display: block;
+    padding: 6em 2em 4em;
   }
 
   @include breakpoint(small) {
-    padding: _size(section-spacing-small);
+    padding: 5.5em 1.5em 3em;
   }
 
-  body.single & {
-    display: block;
+  @include breakpoint(xsmall) {
+    padding: 5em 1.25em 2.5em;
   }
+}
+
+// Enter page (home) gets full-viewport treatment
+#wrapper.enter-wrapper {
+  max-width: 100%;
+  padding: 0;
 }

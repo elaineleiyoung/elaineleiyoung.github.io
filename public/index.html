@@ -24,13 +24,20 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="%PUBLIC_URL%/" />
     <link
-      href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
-      async
     />
   </head>
 
   <body>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>

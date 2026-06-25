@@ -1,235 +1,183 @@
-///
-/// Future Imperfect by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
-/* Header */
+/* Header / Navigation */
 
 body {
-  padding-top: 3.5em;
+  padding-top: 3.75em;
 }
 
 #header {
   @include vendor("display", "flex");
+  @include vendor("align-items", "center");
   @include vendor("justify-content", "space-between");
-  background-color: _palette(bg);
+  background-color: var(--color-header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: solid 1px _palette(border);
-  height: 3.5em;
+  height: 3.75em;
   left: 0;
-  line-height: 3.5em;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: _misc(z-index-base);
+  padding: 0 2.5em;
+
+  @include breakpoint(small) {
+    padding: 0 1.5em;
+    height: 3.25em;
+  }
+
+  @include breakpoint(xsmall) {
+    padding: 0 1.25em;
+  }
 
   a {
     color: inherit;
     text-decoration: none;
   }
 
-  ul {
-    list-style: none;
+  // Site name
+  h1 {
+    font-family: _font(family-heading);
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1;
     margin: 0;
-    padding-left: 0;
+    white-space: nowrap;
+    color: _palette(fg-bold);
+
+    a {
+      border-bottom: none;
+      background-image: none;
+    }
+  }
+
+  // Desktop nav links
+  .links {
+    @include vendor("flex", "1");
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 2em 0 2em;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 2.25em;
+    }
 
     li {
       display: inline-block;
-      padding-left: 0;
+      border-left: none;
+      margin: 0;
+      padding: 0;
     }
-  }
-
-  h1 {
-    height: inherit;
-    line-height: inherit;
-    padding: 0 0 0 1.5em;
-    white-space: nowrap;
 
     a {
-      font-size: 0.7em;
-    }
-  }
+      font-family: _font(family);
+      font-size: 0.72em;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: _palette(fg-light);
+      border-bottom: none;
+      background-image: linear-gradient(var(--color-accent), var(--color-accent));
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
+      @include vendor("transition", "background-size 0.35s ease, color 0.2s ease");
+      padding-bottom: 2px;
 
-  .links {
-    @include vendor("flex", "1");
-    border-left: solid 1px _palette(border);
-    height: inherit;
-    line-height: inherit;
-    margin-left: 1.5em;
-    overflow: hidden;
-    padding-left: 1.5em;
-
-    ul {
-      li {
-        border-left: solid 1px _palette(border);
-        line-height: 1;
-        margin-left: 1em;
-        padding-left: 1em;
-
-        &:first-child {
-          border-left: 0;
-          margin-left: 0;
-          padding-left: 0;
-        }
-
-        a {
-          border-bottom: 0;
-          font-family: _font(family-heading);
-          font-size: 0.7em;
-          font-weight: _font(weight-heading);
-          letter-spacing: _font(kerning-heading);
-          text-transform: uppercase;
-        }
+      &:hover {
+        background-size: 100% 1px;
+        color: _palette(fg-bold) !important;
       }
     }
-  }
 
-  .main {
-    height: inherit;
-    line-height: inherit;
-    text-align: right;
-
-    ul {
-      height: inherit;
-      line-height: inherit;
-
-      li {
-        border-left: solid 1px _palette(border);
-        height: inherit;
-        line-height: inherit;
-        white-space: nowrap;
-
-        > i {
-          text-decoration: none;
-          border-bottom: 0;
-          overflow: hidden;
-          position: relative;
-          text-indent: 4em;
-          margin-right: 1.5em;
-        }
-
-        > * {
-          display: block;
-          float: left;
-        }
-
-        > a {
-          @include icon;
-          border-bottom: 0;
-          color: _palette(fg-light);
-          overflow: hidden;
-          position: relative;
-          text-indent: 4em;
-          width: 4em;
-
-          &:before {
-            display: block;
-            height: inherit;
-            left: 0;
-            line-height: inherit;
-            position: absolute;
-            text-align: center;
-            text-indent: 0;
-            top: 0;
-            width: inherit;
-          }
-        }
-      }
-    }
-  }
-
-  @include breakpoint(medium) {
-    .links {
+    @include breakpoint(medium) {
       display: none;
     }
   }
 
-  @include breakpoint(small) {
-    height: 2.75em;
-    line-height: 2.75em;
+  // Right-side controls
+  .main {
+    display: flex;
+    align-items: center;
 
-    h1 {
-      padding: 0 0 0 1em;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
     }
 
-    .main {
-      .search {
-        display: none;
+    li {
+      display: inline-flex;
+      border-left: none;
+      height: auto;
+      line-height: normal;
+
+      > * {
+        display: inline-flex;
+        float: none;
       }
     }
   }
 }
 
-/* Position and sizing of burger button */
-.bm-burger-button {
-  display: none;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  display: none;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  display: none;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  display: none;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  background: _palette(bg);
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: _palette(fg-bold);
-  padding: 0.8em;
-  font-family: "Raleway", Helvetica, sans-serif;
-}
-
-#header .index-link {
-  z-index: 3;
-}
-
-#header .main .menu {
-  cursor: pointer;
-}
-
-#header .main .close-menu {
-  border: 0;
-  z-index: 10000;
-}
-
-#header .main .open-menu {
-  border: 0;
-}
-
-.open-menu {
-  position: fixed;
-  right: 0;
+// Theme toggle
+.theme-toggle {
+  background: none;
   border: none;
+  color: _palette(fg-light);
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1;
+  padding: 0.4em 0.5em;
+  @include vendor("transition", "color 0.2s ease");
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: _palette(accent);
+  }
 }
 
-.close-menu {
-  position: fixed;
-  right: 0;
-  z-index: 3;
-  border-left: 0;
-}
-
+// Hamburger (mobile)
 .hamburger-container {
   display: none;
 }
 
 @include breakpoint(medium) {
   .hamburger-container {
-    display: initial;
+    display: flex;
+    align-items: center;
   }
 }
+
+/* Burger menu library overrides */
+.bm-burger-button { display: none; }
+.bm-burger-bars   { display: none; }
+.bm-cross-button  { display: none; }
+.bm-cross         { display: none; }
+
+.bm-menu {
+  background: var(--color-bg);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-item-list {
+  color: _palette(fg-bold);
+  padding: 0.8em;
+}
+
+#header .index-link { z-index: 3; }
+#header .main .menu { cursor: pointer; }
+#header .main .close-menu { border: 0; z-index: 10000; }
+#header .main .open-menu  { border: 0; }
+
+.open-menu  { position: fixed; right: 0; border: none; }
+.close-menu { position: fixed; right: 0; z-index: 3; border-left: 0; }

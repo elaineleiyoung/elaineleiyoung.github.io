@@ -1,66 +1,40 @@
-///
-/// Future Imperfect by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Button */
 
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button,
+button:not(.theme-toggle):not(.nav-rail-item),
 .button {
   @include vendor("appearance", "none");
   @include vendor(
     "transition",
     (
-      "background-color #{_duration(transition)} ease",
-      "box-shadow #{_duration(transition)} ease",
+      "border-color #{_duration(transition)} ease",
       "color #{_duration(transition)} ease"
     )
   );
   background-color: transparent;
-  border: 0;
-  box-shadow: inset 0 0 0 1px _palette(border);
+  border: 1px solid _palette(border-alt);
   color: _palette(fg-bold) !important;
   cursor: pointer;
   display: inline-block;
-  font-family: _font(family-heading);
-  font-size: 0.6em;
-  font-weight: _font(weight-heading-bold);
-  height: _size(element-height) * 1.75;
-  letter-spacing: _font(kerning-heading);
-  line-height: _size(element-height) * 1.75;
-  padding: 0 2.5em;
+  font-family: _font(family);
+  font-size: 0.72em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: 0.7em 2em;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 
   &:hover {
-    box-shadow: inset 0 0 0 1px _palette(accent);
+    border-color: _palette(accent);
     color: _palette(accent) !important;
 
     &:active {
-      background-color: transparentize(_palette(accent), 0.95);
+      background-color: color-mix(in srgb, var(--color-accent) 5%, transparent);
     }
-  }
-
-  &:before,
-  &:after {
-    color: _palette(fg-light);
-    position: relative;
-  }
-
-  &:before {
-    left: -1em;
-    padding: 0 0 0 0.75em;
-  }
-
-  &:after {
-    left: 1em;
-    padding: 0 0.75em 0 0;
   }
 
   &.fit {
@@ -69,22 +43,13 @@ button,
     width: 100%;
   }
 
-  &.big {
-    font-size: 0.7em;
-    padding: 0 3em;
-  }
-
-  &.small {
-    font-size: 0.5em;
-  }
+  &.big   { font-size: 0.8em; }
+  &.small { font-size: 0.62em; }
 
   &.disabled,
   &:disabled {
     @include vendor("pointer-events", "none");
-    color: _palette(border) !important;
-
-    &:before {
-      color: _palette(border) !important;
-    }
+    color: _palette(fg-light) !important;
+    border-color: _palette(border);
   }
 }

@@ -5,34 +5,31 @@ import Main from '../layouts/Main';
 
 const Index = () => (
   <Main
-    description={
-      "Elaine Leiyoung's personal website. SF-based UC Berkeley New Grad, "
-      + 'BA in Computer Science & Economics from Boston University, Master of Engineering in Industrial Engineering & Operations Research from UC Berkeley.'
-    }
+    description="Elaine Leiyoung — engineer, researcher, and occasional wanderer."
+    fullPage
   >
-    <article className="post" id="index">
-      <header>
-        <div className="title">
-          <h2>
-            {' '}
-            Welcome to my website.
-          </h2>
-        </div>
-      </header>
-      <p>
-        {' '}
-        Please feel free to read more{' '}
-        <Link to="/about">about me</Link>, or you can check out my{' '}
-        {/* <Link to="/resume">resume</Link>, <Link to="/projects">projects</Link>,{' '} */}
-        <Link to="https://elaineleiyoung.github.io/photography/" reloadDocument>photography</Link>, or{' '}
-        {/* <Link to="/contact">contact</Link> me. */}
-      </p>
-      <p>
-        {/* {' '}
-        Source available{' '}
-        <a href="https://github.com/mldangelo/personal-site">here</a>. */}
-      </p>
-    </article>
+    <div className="enter-hero">
+      <div className="enter-inner">
+        {/* <p className="enter-eyebrow">San Francisco</p> */}
+        <h1 className="enter-name">Elaine Leiyoung</h1>
+        <div className="enter-stroke" aria-hidden="true" />
+        <p className="enter-tagline">
+          I build things, ask questions,<br />
+          and pay attention.
+        </p>
+        <nav className="enter-nav" aria-label="Pages">
+          <Link to="/about">The Wanderer</Link>
+          <span className="enter-sep" aria-hidden="true">·</span>
+          <Link to="/record">The Record</Link>
+          <span className="enter-sep" aria-hidden="true">·</span>
+          <Link to="/craft">The Craft</Link>
+          <span className="enter-sep" aria-hidden="true">·</span>
+          <Link to="/observe">Observe</Link>
+          <span className="enter-sep" aria-hidden="true">·</span>
+          <Link to="/contact">Send Word</Link>
+        </nav>
+      </div>
+    </div>
   </Main>
 );
 

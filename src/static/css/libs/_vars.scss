@@ -21,7 +21,7 @@ $size: (
 // Font.
 $font: (
   family: (
-    "Source Sans Pro",
+    "Inter",
     Helvetica,
     sans-serif,
   ),
@@ -30,27 +30,27 @@ $font: (
     monospace,
   ),
   family-heading: (
-    "Raleway",
-    Helvetica,
-    sans-serif,
+    "Cormorant Garamond",
+    Georgia,
+    serif,
   ),
   weight: 400,
-  weight-bold: 700,
+  weight-bold: 600,
   weight-heading: 400,
-  weight-heading-bold: 800,
-  weight-heading-extrabold: 900,
-  kerning-heading: 0.25em,
+  weight-heading-bold: 600,
+  weight-heading-extrabold: 700,
+  kerning-heading: 0.08em,
 );
 
-// Palette.
+// Palette — values point to CSS custom properties defined in _theme.scss.
 $palette: (
-  bg: #ffffff,
-  bg-alt: #f4f4f4,
-  fg: #646464,
-  fg-bold: #3c3b3b,
-  fg-light: #aaaaaa,
-  border: rgba(160, 160, 160, 0.3),
-  border-bg: rgba(160, 160, 160, 0.075),
-  border-alt: rgba(160, 160, 160, 0.65),
-  accent: #2e59ba,
+  bg: var(--color-bg),
+  bg-alt: var(--color-bg-alt),
+  fg: var(--color-fg),
+  fg-bold: var(--color-fg-bold),
+  fg-light: var(--color-fg-light),
+  border: var(--color-border),
+  border-bg: var(--color-border-bg),
+  border-alt: var(--color-border-alt),
+  accent: var(--color-accent),
 );

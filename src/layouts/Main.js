@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
-import Analytics from '../components/Template/Analytics';
 import Navigation from '../components/Template/Navigation';
 import SideBar from '../components/Template/SideBar';
 import ScrollToTop from '../components/Template/ScrollToTop';
 
 const Main = (props) => (
-  <HelmetProvider>
-    <Analytics />
+  <>
     <ScrollToTop />
     <Helmet
       titleTemplate="%s | Elaine Leiyoung"
@@ -24,7 +22,7 @@ const Main = (props) => (
       <div id="main">{props.children}</div>
       {props.fullPage ? null : <SideBar />}
     </div>
-  </HelmetProvider>
+  </>
 );
 
 Main.propTypes = {
@@ -39,7 +37,7 @@ Main.propTypes = {
 
 Main.defaultProps = {
   children: null,
-  fullPage: false,
+  fullPage: true,
   title: null,
   description: "Elaine Leiyoung's personal website.",
 };
