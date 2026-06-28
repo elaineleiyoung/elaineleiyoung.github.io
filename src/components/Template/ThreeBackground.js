@@ -25,6 +25,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as THREE from 'three';
 
@@ -165,8 +166,9 @@ function getSceneAt(p) {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const ThreeBackground = () => {
+const ThreeBackground = ({ onReady }) => {
   const containerRef = useRef(null);
+  const readyCalled = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -642,6 +644,10 @@ const ThreeBackground = () => {
       petalMesh.instanceMatrix.needsUpdate = true;
 
       renderer.render(scene, camera);
+      if (!readyCalled.current) {
+        readyCalled.current = true;
+        if (onReady) onReady();
+      }
     };
 
     animate();
@@ -707,6 +713,14 @@ const ThreeBackground = () => {
       }}
     />
   );
+};
+
+ThreeBackground.propTypes = {
+  onReady: PropTypes.func,
+};
+
+ThreeBackground.defaultProps = {
+  onReady: null,
 };
 
 export default ThreeBackground;

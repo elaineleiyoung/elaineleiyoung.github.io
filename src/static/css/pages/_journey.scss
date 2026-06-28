@@ -1,5 +1,50 @@
 /* Journey — single-page scroll experience */
 
+// ── Site loader ───────────────────────────────────────────────────────────────
+@keyframes loaderDots {
+  0%, 20%   { content: '.';   }
+  40%       { content: '..';  }
+  60%, 100% { content: '...'; }
+}
+
+// Stage 1 (0–35%): fade to near-transparent so mist shows through
+// Stage 2 (35–65%): hold — let the user see the Three.js scene
+// Stage 3 (65–100%): fade fully out into the portfolio
+@keyframes loaderReveal {
+  0%         { opacity: 1; }
+  35%        { opacity: 0.1; }
+  65%        { opacity: 0.1; }
+  100%       { opacity: 0; }
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  &.revealing {
+    animation: loaderReveal 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+.site-loader-text {
+  font-family: _font(family);
+  font-size: 0.65em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: _palette(fg-light);
+
+  &::after {
+    content: '...';
+    animation: loaderDots 1.2s steps(1) infinite;
+  }
+}
+
 // ── Scroll driver ─────────────────────────────────────────────────────────────
 // Creates 500vh of scroll space; all content overlays are position:fixed.
 .scroll-driver {

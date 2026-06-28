@@ -81,14 +81,13 @@ const Journey = () => {
       {/* 500vh tall scroll driver — creates the scroll space the camera reads */}
       <div className="scroll-driver">
 
-        {/* ── Arrival ─────────────────────────────────────────────────────── */}
         <section
           ref={setRef(0)}
           className="journey-overlay arrival-overlay"
           aria-label="Arrival"
           style={{ opacity: 1, visibility: 'visible' }}
         >
-          <div className="arrival-inner">
+          <div className="arrival-inner" style={{ fontSize: '0.9em' }}>
             <div className="arrival-stroke" aria-hidden="true" />
             <h1 className="arrival-name">Elaine Leiyoung</h1>
             <div className="arrival-stroke" aria-hidden="true" />
@@ -96,6 +95,10 @@ const Journey = () => {
               Here is the little stone, smooth as an asphodel.
               <br />
               It is at the beginning of everything.
+              <br />
+              <p3>
+                - Albert Camus
+              </p3>
             </p>
             <p className="scroll-hint" aria-hidden="true">↓</p>
           </div>
