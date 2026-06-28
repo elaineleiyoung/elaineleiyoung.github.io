@@ -6,6 +6,12 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
 // See https://fontawesome.com/icons?d=gallery&s=brands,regular&m=free
 // to add other icons.
 
+export const CONTACT_QUOTE = {
+  text: 'Tomorrow, perhaps, we shall leave together.',
+  author: 'Albert Camus',
+  work: 'The Minotaur, or Stopping in Oran',
+};
+
 const data = [
   {
     link: 'https://github.com/elaineleiyoung',
@@ -28,7 +34,7 @@ const data = [
     icon: faLinkedinIn,
   },
   {
-    link: 'mailto:elaine_leiyoung@berkeley.edu',
+    link: 'mailto:elaineleiyoung@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },

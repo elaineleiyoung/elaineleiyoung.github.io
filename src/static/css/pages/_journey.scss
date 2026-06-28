@@ -82,7 +82,7 @@
   50% { transform: translateY(5px); }
 }
 
-// ── Writing / The Wanderer ────────────────────────────────────────────────────
+// ── Writing / About ────────────────────────────────────────────────────
 .writing-overlay {
   align-items: center;
   justify-content: flex-start;
@@ -96,11 +96,11 @@
   max-height: 75vh;
   overflow-y: auto;
   padding: 2.2rem 2.4rem;
-  background: var(--color-header-bg);
-  backdrop-filter: blur(8px);
+  background: #f2f2f296;
+  backdrop-filter: blur(80px);
   -webkit-backdrop-filter: blur(8px);
-  border-left: 1px solid _palette(accent);
-  border-right: 1px solid _palette(accent);
+  // border-left: 1px solid _palette(accent);
+  // border-right: 1px solid _palette(accent);
   scrollbar-width: none;
   @include breakpoint(small) {
     max-width: calc(100vw - 4rem);
@@ -110,13 +110,7 @@
     scrollbar-width: thin; 
     scrollbar-color: _palette(border) transparent;
   }
-  background: linear-gradient(
-    to bottom,
-    transparent 0px,
-    var(--color-header-bg) 2rem,
-    var(--color-header-bg) calc(100% - 2rem),
-    transparent 100%
-  );
+  
 }
 
 .section-title {
@@ -128,121 +122,275 @@
   margin: 0 0 1.2em;
 }
 
-.writing-content {
+// ── About tabs ─────────────────────────────────────────────────────────────
+.about-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid _palette(border);
+  margin-bottom: 1.4rem;
+}
+
+.about-tab {
+  flex: 1;
+  padding: 0.45rem 0.2rem;
   font-family: _font(family);
-  font-size: 0.85em;
-  line-height: 1.8;
-  color: _palette(fg);
-
-  h1, h2, h3 {
-    font-family: _font(family-heading);
-    font-weight: 400;
-    color: _palette(fg-bold);
-    margin: 1.4em 0 0.5em;
-    font-size: 1.05em;
-    letter-spacing: 0.05em;
-  }
-
-  p { margin: 0 0 0.9em; }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0.9em;
-
-    li {
-      padding-left: 1.1em;
-      position: relative;
-      margin-bottom: 0.3em;
-
-      &::before {
-        content: '—';
-        position: absolute;
-        left: 0;
-        color: _palette(fg-light);
-        font-size: 0.8em;
-        top: 0.1em;
-      }
-    }
-  }
-
-  a {
-    color: _palette(accent);
-    border-bottom: 1px solid transparent;
-    @include vendor("transition", "border-color 0.2s ease");
-
-    &:hover { border-bottom-color: _palette(accent); }
-  }
-}
-
-// ── Work / The Craft ──────────────────────────────────────────────────────────
-.work-overlay {
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 12vh;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.work-inner {
-  width: 100%;
-  max-width: 700px;
-}
-
-.craft-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 0.5em;
-
-  @include breakpoint(small) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.craft-card {
-  padding: 1.4rem 1.6rem;
-  background: var(--color-header-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid _palette(border-alt);
-}
-
-.craft-card-title {
-  font-family: _font(family-heading);
-  font-size: 1.05em;
-  font-weight: 400;
-  color: _palette(fg-bold);
-  margin: 0 0 0.3em;
-  letter-spacing: 0.03em;
-}
-
-.craft-card-sub {
-  font-size: 0.7em;
-  letter-spacing: 0.08em;
+  font-size: 0.58em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: _palette(accent);
-  margin: 0 0 0.8em;
+  color: _palette(fg-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  @include vendor("transition", "color 0.45s ease");
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: _palette(accent);
+    opacity: 0;
+    @include vendor("transition", "opacity 0.45s ease");
+  }
+
+  &.active {
+    color: _palette(fg-bold);
+    &::after { opacity: 1; }
+  }
+
+  &:hover:not(.active) { color: _palette(fg); }
 }
 
-.craft-card-desc {
-  font-size: 0.8em;
-  line-height: 1.7;
-  color: _palette(fg);
-  margin: 0 0 0.9em;
+// All panels occupy the same grid cell; tallest determines container height
+.about-body {
+  display: grid;
 }
 
-.craft-card-link {
-  font-size: 0.75em;
+.about-panel {
+  grid-row: 1;
+  grid-column: 1;
+  opacity: 0;
+  visibility: hidden;
+  @include vendor("transition", "opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0s 0.7s");
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    @include vendor("transition", "opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0s 0s");
+  }
+}
+
+.about-quote {
+  font-family: _font(family-heading);
+  font-size: 1.0em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.75;
+  color: _palette(fg-bold);
+  margin: 0 0 1.1rem;
+  padding: 0;
+  border: none;
+}
+
+.about-cite {
+  display: block;
+  font-size: 0.7em;
   letter-spacing: 0.06em;
   color: _palette(fg-light);
+  font-style: normal;
+}
+
+.about-text {
+  font-family: _font(family);
+  font-size: 0.82em;
+  line-height: 1.85;
+  color: _palette(fg);
+
+  p { margin: 0 0 0.85em; }
+  p:last-child { margin: 0; }
+}
+
+.about-exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-exp-title {
+  font-family: _font(family);
+  font-size: 0.82em;
+  font-weight: 600;
+  color: _palette(fg-bold);
+  margin: 0 0 0.15em;
+}
+
+.about-exp-meta {
+  font-size: 0.68em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: _palette(accent);
+  margin: 0 0 0.4em;
+}
+
+.about-exp-desc {
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: _palette(fg);
+  margin: 0;
+}
+
+// ── Works ─────────────────────────────────────────────────────────────────────
+.works-overlay {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
+  gap: 2.8rem;
+}
+
+.works-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+  width: 100%;
+  max-width: 960px;
+}
+
+.works-header {
+  text-align: center;
+  max-width: 520px;
+  padding: 1.6rem 3rem;
+  background: #f2f2f2c0;
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.works-quote {
+  font-family: _font(family-heading);
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.8;
+  color: _palette(fg-bold);
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: none;
+}
+
+.works-cite {
+  display: block;
+  font-size: 0.68em;
+  letter-spacing: 0.06em;
+  color: _palette(fg-light);
+  font-style: normal;
+}
+
+.works-cards {
+  display: flex;
+  gap: 1.4rem;
+  width: 100%;
+  align-items: stretch;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+}
+
+.works-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 2.6rem;
+  background: #f2f2f2c0;
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.works-card-label {
+  font-family: _font(family);
+  font-size: 0.62em;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: _palette(accent);
+  margin: 0 0 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid _palette(accent);
+}
+
+.works-card-desc {
+  font-family: _font(family);
+  font-size: 0.8em;
+  line-height: 1.85;
+  color: _palette(fg);
+  margin: 0;
+  flex: 1;
+}
+
+.works-link {
+  display: inline-block;
+  font-family: _font(family);
+  font-size: 0.72em;
+  letter-spacing: 0.06em;
+  color: _palette(fg-light);
+  margin-top: 1.2rem;
   border-bottom: none;
-  @include vendor("transition", "color 0.2s ease");
+  @include vendor("transition", "color 0.3s ease");
 
   &:hover { color: _palette(fg-bold); }
 }
 
-// ── Contact / Send Word ───────────────────────────────────────────────────────
+.works-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.works-post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.works-post-title {
+  font-family: _font(family);
+  font-size: 0.8em;
+  line-height: 1.45;
+  color: _palette(fg-bold);
+  border-bottom: none;
+  @include vendor("transition", "color 0.3s ease");
+
+  &:hover { color: _palette(accent); }
+}
+
+.works-post-date {
+  font-size: 0.65em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: _palette(fg-light);
+}
+
+// ── Contact ───────────────────────────────────────────────────────────────────
 .contact-overlay {
   align-items: center;
   justify-content: center;
@@ -250,18 +398,26 @@
 
 .contact-inner {
   text-align: center;
-  padding: 2.4rem 2rem;
-  background: var(--color-header-bg);
-  backdrop-filter: blur(8px);
+  max-width: 480px;
+  padding: 2.4rem 3rem;
+  background: #f2f2f2c0;
+  backdrop-filter: blur(80px);
   -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
 
-  .section-title { margin-bottom: 1.4em; }
+.contact-divider {
+  width: 32px;
+  height: 1px;
+  background: _palette(border);
+  margin: 1.6rem auto;
 }
 
 .contact-email {
   display: block;
   font-family: _font(family);
-  font-size: 0.95em;
+  font-size: 0.88em;
   letter-spacing: 0.04em;
   color: _palette(fg);
   margin-bottom: 1.6em;
@@ -363,13 +519,6 @@
   }
 }
 
-.nav-rail-theme {
-  margin-top: 1.2rem;
-  opacity: 0.6;
-  @include vendor("transition", "opacity 0.2s ease");
-
-  &:hover { opacity: 1; }
-}
 
 // ── Reduced motion fallback ───────────────────────────────────────────────────
 @media (prefers-reduced-motion: reduce) {

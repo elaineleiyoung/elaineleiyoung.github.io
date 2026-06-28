@@ -3,7 +3,7 @@
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button:not(.theme-toggle):not(.nav-rail-item),
+button:not(.nav-rail-item):not(.about-tab),
 .button {
   @include vendor("appearance", "none");
   @include vendor(

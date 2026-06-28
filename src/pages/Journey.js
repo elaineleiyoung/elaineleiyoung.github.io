@@ -1,17 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import Markdown from 'markdown-to-jsx';
 
 import NavRail from '../components/Template/NavRail';
 import ContactIcons from '../components/Contact/ContactIcons';
-import projectsData from '../data/projects';
+import { CONTACT_QUOTE } from '../data/contact';
+import {
+  QUOTE, TABS, BACKGROUND, EXPERIENCES, CURRENT,
+} from '../data/about';
+import {
+  WORKS_QUOTE, PHOTOGRAPHY, SUBSTACK, CODE,
+} from '../data/works';
 
 // Each section's visible progress window [start, end] with a fade margin
 const SECTIONS = [
   { start: 0.00, end: 0.15, fade: 0.05 }, // Arrival
   { start: 0.18, end: 0.53, fade: 0.05 }, // The Wanderer
   { start: 0.58, end: 0.78, fade: 0.05 }, // The Craft
-  { start: 0.83, end: 1.00, fade: 0.05 }, // Send Word
+  { start: 0.83, end: 1.00, fade: 0.05 }, // Contact
 ];
 
 function calcOpacity(p, start, end, fade) {
@@ -22,14 +27,8 @@ function calcOpacity(p, start, end, fade) {
 }
 
 const Journey = () => {
-  const [markdown, setMarkdown] = useState('');
+  const [activeTab, setActiveTab] = useState('quote');
   const sectRefs = useRef([null, null, null, null]);
-
-  useEffect(() => {
-    import('../data/about.md').then((res) => {
-      fetch(res.default).then((r) => r.text()).then(setMarkdown);
-    });
-  }, []);
 
   // Drive overlay visibility via direct DOM writes (no setState → no re-renders)
   useEffect(() => {
@@ -90,82 +89,206 @@ const Journey = () => {
           style={{ opacity: 1, visibility: 'visible' }}
         >
           <div className="arrival-inner">
-            {/* <p className="arrival-eyebrow">Thus I draw from
-            the absurd three consequences, which are</p> */}
             <div className="arrival-stroke" aria-hidden="true" />
             <h1 className="arrival-name">Elaine Leiyoung</h1>
             <div className="arrival-stroke" aria-hidden="true" />
             <p className="arrival-tagline">
-              Thus I draw from the absurd three consequences, which are
+              Here is the little stone, smooth as an asphodel.
               <br />
-              <b>my revolt, my freedom, and my passion.</b>
-              <br />
-              - Albert Camus
+              It is at the beginning of everything.
             </p>
             <p className="scroll-hint" aria-hidden="true">↓</p>
           </div>
         </section>
 
-        {/* ── The Wanderer ─────────────────────────────────────────────────── */}
+        {/* ── About Section ─────────────────────────────────────────────────── */}
         <section
           ref={setRef(1)}
           className="journey-overlay writing-overlay"
-          aria-label="The Wanderer"
+          aria-label="About"
           style={{ opacity: 0, visibility: 'hidden', pointerEvents: 'none' }}
         >
           <div className="writing-inner">
-            <h2 className="section-title">The Wanderer</h2>
-            <div className="writing-content">
-              <Markdown>{markdown}</Markdown>
+
+            {/* Tab bar */}
+            <nav className="about-tabs" aria-label="About sections">
+              {TABS.map(({ id, label }) => (
+                <button
+                  key={id}
+                  type="button"
+                  className={`about-tab${activeTab === id ? ' active' : ''}`}
+                  onClick={() => setActiveTab(id)}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+
+            {/* All panels rendered simultaneously; grid stacking keeps height = tallest panel */}
+            <div className="about-body">
+
+              <div className={`about-panel${activeTab === 'quote' ? ' active' : ''}`}>
+                <blockquote className="about-quote">{QUOTE.text}</blockquote>
+                <cite className="about-cite">
+                  {'— '}
+                  {QUOTE.author}
+                  {', '}
+                  <em>{QUOTE.work}</em>
+                </cite>
+              </div>
+
+              <div className={`about-panel${activeTab === 'background' ? ' active' : ''}`}>
+                <div className="about-text">
+                  {BACKGROUND.map((para) => (
+                    <p key={para.slice(0, 32)}>{para}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className={`about-panel${activeTab === 'experiences' ? ' active' : ''}`}>
+                <ul className="about-exp-list">
+                  {EXPERIENCES.map((exp) => (
+                    <li key={exp.title} className="about-exp-item">
+                      <p className="about-exp-title">{exp.title}</p>
+                      <p className="about-exp-meta">
+                        {exp.org}
+                        {' · '}
+                        {exp.period}
+                      </p>
+                      <p className="about-exp-desc">{exp.desc}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={`about-panel${activeTab === 'current' ? ' active' : ''}`}>
+                <div className="about-text">
+                  {CURRENT.map((para) => (
+                    <p key={para.slice(0, 32)}>{para}</p>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* ── The Craft ────────────────────────────────────────────────────── */}
+        {/* ── Works ────────────────────────────────────────────────────────── */}
         <section
           ref={setRef(2)}
-          className="journey-overlay work-overlay"
-          aria-label="The Craft"
+          className="journey-overlay works-overlay"
+          aria-label="Works"
           style={{ opacity: 0, visibility: 'hidden', pointerEvents: 'none' }}
         >
-          <div className="work-inner">
-            <h2 className="section-title">The Craft</h2>
-            <div className="craft-grid">
-              {projectsData.map((project) => (
-                <div key={project.title} className="craft-card">
-                  <h3 className="craft-card-title">{project.title}</h3>
-                  <p className="craft-card-sub">{project.subtitle}</p>
-                  <p className="craft-card-desc">{project.desc}</p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      className="craft-card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View →
-                    </a>
-                  )}
-                </div>
-              ))}
+          <div className="works-inner">
+
+            <div className="works-header">
+              <blockquote className="works-quote">{WORKS_QUOTE.text}</blockquote>
+              <cite className="works-cite">
+                {'— '}
+                {WORKS_QUOTE.author}
+                {', '}
+                <em>{WORKS_QUOTE.work}</em>
+              </cite>
+            </div>
+
+            <div className="works-cards">
+
+              <div className="works-card">
+                <p className="works-card-label">Photography</p>
+                <p className="works-card-desc">{PHOTOGRAPHY.desc}</p>
+                <a
+                  href={PHOTOGRAPHY.url}
+                  className="works-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {PHOTOGRAPHY.label}
+                  {' →'}
+                </a>
+              </div>
+
+              <div className="works-card">
+                <p className="works-card-label">Writing</p>
+                <ul className="works-post-list">
+                  {SUBSTACK.posts.map((post) => (
+                    <li key={post.title} className="works-post-item">
+                      <a
+                        href={post.url}
+                        className="works-post-title"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {post.title}
+                      </a>
+                      <span className="works-post-date">{post.date}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={SUBSTACK.url}
+                  className="works-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View all on Substack
+                  {' →'}
+                </a>
+              </div>
+
+              <div className="works-card">
+                <p className="works-card-label">Code</p>
+                <ul className="works-post-list">
+                  {CODE.repos.map((repo) => (
+                    <li key={repo.name + repo.desc} className="works-post-item">
+                      <a
+                        href={repo.url}
+                        className="works-post-title"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {repo.name}
+                      </a>
+                      <span className="works-post-date">{repo.lang}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={CODE.githubUrl}
+                  className="works-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View GitHub
+                  {' →'}
+                </a>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* ── Send Word ────────────────────────────────────────────────────── */}
+        {/* ── Contact ──────────────────────────────────────────────────────── */}
         <section
           ref={setRef(3)}
           className="journey-overlay contact-overlay"
-          aria-label="Send Word"
+          aria-label="Contact"
           style={{ opacity: 0, visibility: 'hidden', pointerEvents: 'none' }}
         >
           <div className="contact-inner">
-            <h2 className="section-title">Send Word</h2>
+            <blockquote className="works-quote">{CONTACT_QUOTE.text}</blockquote>
+            <cite className="works-cite">
+              {'— '}
+              {CONTACT_QUOTE.author}
+              {', '}
+              <em>{CONTACT_QUOTE.work}</em>
+            </cite>
+            <div className="contact-divider" />
             <a
-              href="mailto:elaine_leiyoung@berkeley.edu"
+              href="mailto:elaineleiyoung@gmail.com"
               className="contact-email"
             >
-              elaine_leiyoung@berkeley.edu
+              elaineleiyoung@gmail.com
             </a>
             <ContactIcons />
           </div>

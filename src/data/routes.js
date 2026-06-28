@@ -5,24 +5,8 @@ const routes = [
     path: '/',
   },
   {
-    label: 'The Wanderer',
-    path: '/about',
-  },
-  {
-    label: 'The Record',
-    path: '/record',
-  },
-  {
-    label: 'The Craft',
-    path: '/craft',
-  },
-  {
     label: 'Observe',
     path: '/observe',
-  },
-  {
-    label: 'Send Word',
-    path: '/contact',
   },
 ];
 

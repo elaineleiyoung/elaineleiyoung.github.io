@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 // Section definitions: target = where clicking scrolls, active = threshold
 const NAV_SECTIONS = [
@@ -17,13 +16,13 @@ const NAV_SECTIONS = [
   },
   {
     id: 'work',
-    label: 'The Craft',
+    label: 'Works',
     target: 0.66,
     active: 0.58,
   },
   {
     id: 'contact',
-    label: 'Send Word',
+    label: 'Contact',
     target: 0.90,
     active: 0.83,
   },
@@ -95,9 +94,6 @@ const NavRail = () => {
           </li>
         ))}
       </ul>
-      <div className="nav-rail-theme">
-        <ThemeToggle />
-      </div>
     </nav>
   );
 };

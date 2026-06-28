@@ -72,8 +72,8 @@ const KEYFRAMES = [
     camX: 0.0,
     mtn: [0.7, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0],
     mist: [0.8, 0.7, 0.6, 0.5],
-    petal: 0.85,
-    petalSpeed: 1.0,
+    petal: 0.65,
+    petalSpeed: 0.05,
     treeX: 0.29,
   },
   // Beat 1 — The Wanderer (p = 0.18): pavilion-far prominent; pavilion-near hidden
@@ -86,6 +86,18 @@ const KEYFRAMES = [
     mist: [1.0, 1.0, 1.2, 1.5],
     petal: 0.5,
     petalSpeed: 0.3,
+    treeX: 0.29,
+  },
+  // Beat 1.5 — Wanderer fading (p = 0.55): pavilion-near still hidden; cam at Craft position
+  {
+    p: 0.55,
+    camZ: 2.0,
+    camY: 0.0,
+    camX: 0.35,
+    mtn: [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    mist: [1.2, 1.3, 0.5, 0.2],
+    petal: 0.6,
+    petalSpeed: 1.0,
     treeX: 0.29,
   },
   // Beat 2 — The Craft (p = 0.58): pavilion-near only; cam zooms right and forward

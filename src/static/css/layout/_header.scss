@@ -127,24 +127,6 @@ body {
   }
 }
 
-// Theme toggle
-.theme-toggle {
-  background: none;
-  border: none;
-  color: _palette(fg-light);
-  cursor: pointer;
-  font-size: 1em;
-  line-height: 1;
-  padding: 0.4em 0.5em;
-  @include vendor("transition", "color 0.2s ease");
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    color: _palette(accent);
-  }
-}
-
 // Hamburger (mobile)
 .hamburger-container {
   display: none;

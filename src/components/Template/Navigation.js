@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Hamburger from './Hamburger';
-import ThemeToggle from './ThemeToggle';
 import routes from '../../data/routes';
 
 const Navigation = () => (
@@ -27,11 +26,6 @@ const Navigation = () => (
           ))}
       </ul>
     </nav>
-    <div className="main">
-      <ul>
-        <li><ThemeToggle /></li>
-      </ul>
-    </div>
     <Hamburger />
   </header>
 );
